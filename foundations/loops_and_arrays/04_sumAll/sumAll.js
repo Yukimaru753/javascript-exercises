@@ -1,17 +1,11 @@
 const sumAll = function (min, max) {
-  if (
-    typeof min !== "number" ||
-    typeof max !== "number" ||
-    min < 0 ||
-    max < 0 ||
-    !Number.isInteger(min) ||
-    !Number.isInteger(max)
-  ) {
-    return "ERROR";
-  } else if (min > max) {
-    let passNum = max;
-    max = min;
-    min = passNum;
+  if (typeof min !== "number" || typeof max !== "number") return "ERROR"; //数字か
+  if (min <= 0 || max <= 0) return "ERROR"; //正の数か
+  if (!Number.isInteger(min) || !Number.isInteger(max)) return "ERROR"; //整数か
+  if (min > max) {
+    //minのほうが大きい場合は値を入れ替える
+    [min, max] = [max, min];
+    //分割代入
   }
 
   let sum = 0;
