@@ -1,10 +1,8 @@
 const reverseString = function(string) {
-    let newString = "";
-    for (let i = (string.length - 1); i >= 0; i--) {
-        newString += string[i];
-    }
-
-    return newString;
+    return string.split("").reverse().join("");
+    // join("")　文字列を一つにまとめる
+    // reduce((result, letter) => result + letter;, ""); 
+    // 自分でルールを決めて一つに集約
 };
 
 // Do not edit below this line
